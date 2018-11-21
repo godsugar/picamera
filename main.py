@@ -60,7 +60,8 @@ def draw_positions(frame, decoded_objs):
 
 def draw_qr_num(frame, decoded_objs):
     font = cv2.FONT_HERSHEY_SIMPLEX
-    frame = cv2.putText(frame,'OpenCV',(10,500), font, 4,(255,255,255),2,cv2.LINE_AA)
+    output_str = 'Detected QE codes: ' + str(len(decoded_objs))
+    frame = cv2.putText(frame,output_str,(10,500), font, 4,(255,255,255),2,cv2.LINE_AA)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
