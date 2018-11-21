@@ -39,6 +39,7 @@ def get_frame():
 def process_frame(frame):
     decoded_objs = decode(frame)
     draw_positions(frame, decoded_objs)
+    draw_qr_num(frame, decoded_objs)
 
 def decode(frame):
     decoded_objs = pyzbar.decode(frame, scan_locations=True)
@@ -56,6 +57,10 @@ def draw_positions(frame, decoded_objs):
                   (left, top),
                   (left + width, height + top),
                   (255, 0, 255), 2)
+
+def draw_qr_num(frame, decoded_objs):
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    frame = cv2.putText(frame,'OpenCV',(10,500), font, 4,(255,255,255),2,cv2.LINE_AA)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
