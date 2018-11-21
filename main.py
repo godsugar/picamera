@@ -53,12 +53,19 @@ def decode(frame):
 def draw_positions(frame, decoded_objs):
     for decoded_obj in decoded_objs:
         left, top, width, height = decoded_obj.rect
+        # 四角形を描画
         frame = cv2.rectangle(frame,
                   (left, top),
                   (left + width, height + top),
                   (255, 0, 255), 2)
+        # QRコード読み取り結果を描画
+        frame = cv2.putText(frame,decoded_obj[0],(left - 10, top), font, 1,(255,255,255),2,cv2.LINE_AA)
+        
+
+
 
 def draw_qr_num(frame, decoded_objs):
+    # QRコードの個数を描画
     font = cv2.FONT_HERSHEY_SIMPLEX
     output_str = 'Detected QR codes: ' + str(len(decoded_objs))
     frame = cv2.putText(frame,output_str,(30,30), font, 1,(255,255,255),2,cv2.LINE_AA)
