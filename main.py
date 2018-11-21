@@ -60,7 +60,7 @@ def draw_positions(frame, decoded_objs):
                   (255, 0, 255), 2)
         # QRコード読み取り結果を描画
         font = cv2.FONT_HERSHEY_SIMPLEX
-        frame = cv2.putText(frame,decoded_obj[0],(left - 10, top), font, 1,(255,255,255),2,cv2.LINE_AA)
+        frame = cv2.putText(frame,decoded_obj[0],(left, top), font, 1,(255,255,255),2,cv2.LINE_AA)
         
 
 
