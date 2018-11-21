@@ -10,7 +10,7 @@ import time
 
 camera = PiCamera()
 camera.resolution = (640, 480)
-camera.framerate = 60
+camera.framerate = 120
 rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.5)
 
