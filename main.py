@@ -9,9 +9,9 @@ import cv2
 import time
 
 camera = PiCamera()
-camera.resolution = (1280, 960)
-camera.framerate = 60
-rawCapture = PiRGBArray(camera, size=(1280, 960))
+camera.resolution = (640, 480)
+camera.framerate = 32
+rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.5)
 
 app = Flask(__name__)
